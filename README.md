@@ -28,11 +28,11 @@ when CQClient runs, it will be notify update event of TripStat, and it will cont
 
 ### for Mac
 
-    ```
-    brew install gemfire
-    brew install maven
-    ```
 
+    ```
+     brew install gemfire
+     brew install maven
+    ```
 
 ## build sourcecode
 
