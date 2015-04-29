@@ -28,6 +28,7 @@ when CQClient runs, it will be notify update event of TripStat, and it will cont
 
 ### for Mac
 
+1. install
 
     ```
      brew install gemfire
