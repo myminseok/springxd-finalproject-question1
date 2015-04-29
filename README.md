@@ -26,12 +26,10 @@ when CQClient runs, it will be notify update event of TripStat, and it will cont
 1. Spring XD     (http://projects.spring.io/spring-xd/)
 
 
-1.1 for Mac
-
+### for Mac
 
     ```
     brew install gemfire
-
     brew install maven
     ```
 
