@@ -1,0 +1,13 @@
+DS_Store
+.gradle
+.idea
+**/*.log
+**/.project
+**/.settings
+**/.classpath
+**/*.iml
+**/*.ipr
+**/*.iws
+**/target
+gemfire-server/locator*
+gemfire-server/server*
