@@ -31,8 +31,8 @@ when CQClient runs, it will be notify update event of TripStat, and it will cont
 1. install
 
     ```
-     brew install gemfire
-     brew install maven
+     $> brew install gemfire
+     $> brew install maven
     ```
 
 ## build sourcecode
@@ -40,12 +40,12 @@ when CQClient runs, it will be notify update event of TripStat, and it will cont
 1. download this git repository.
 
     ```
-    git clone [this git repository URL]
+    $>  git clone [this git repository URL]
     ```
 
     ```
-    cd springxd-finalproject-question1
-    mvn clean package
+    $> cd springxd-finalproject-question1
+    $> mvn clean package
     ```
 
 
