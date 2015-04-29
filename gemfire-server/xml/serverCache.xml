@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE cache PUBLIC
+  "-//GemStone Systems, Inc.//GemFire Declarative Caching 7.0//EN"
+  "http://www.gemstone.com/dtd/cache7_0.dtd">
+<cache>
+    <region name="Trip">
+      <region-attributes refid="REPLICATE">
+          <entry-time-to-live>
+              <!-- 30min-->
+              <expiration-attributes timeout="1800"/>
+          </entry-time-to-live>
+
+        <cache-writer>
+          <class-name>server.ValidatingCacheWriter</class-name>
+        </cache-writer>
+
+        <cache-listener>
+              <class-name>server.TripListener</class-name>
+              <parameter name="filename">
+                <string>MyLogFile.log</string>
+            </parameter>
+        </cache-listener>
+
+      </region-attributes>
+    </region>
+    <region name="TripStat">
+        <region-attributes refid="REPLICATE">
+            <entry-time-to-live>
+                <expiration-attributes timeout="1800"/>
+            </entry-time-to-live>
+        </region-attributes>
+    </region>
+    <function-service>
+    </function-service>
+</cache>

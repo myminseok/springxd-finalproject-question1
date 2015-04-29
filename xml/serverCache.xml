@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<!-- Server.xml
+     Configures a cache to serve caching clients at port 40405.
+     The example region also is configured with a loader. 
+-->
+
+<!DOCTYPE cache PUBLIC
+  "-//GemStone Systems, Inc.//GemFire Declarative Caching 7.0//EN"
+  "http://www.gemstone.com/dtd/cache7_0.dtd">
+<cache>
+    <region name="domain.Trip">
+      <region-attributes refid="REPLICATE">
+          <entry-time-to-live>
+              <expiration-attributes timeout="10"/>
+          </entry-time-to-live>
+
+        <cache-writer>
+          <class-name>server.ValidatingCacheWriter</class-name>
+        </cache-writer>
+
+        <cache-listener>
+              <class-name>server.TripListener</class-name>
+              <parameter name="filename">
+                <string>MyLogFile.log</string>
+            </parameter>
+        </cache-listener>
+
+      </region-attributes>
+    </region>
+    <region name="domain.TripStat">
+        <region-attributes refid="REPLICATE">
+            <entry-time-to-live>
+                <expiration-attributes timeout="10"/>
+            </entry-time-to-live>
+        </region-attributes>
+    </region>
+    <function-service>
+    </function-service>
+</cache>

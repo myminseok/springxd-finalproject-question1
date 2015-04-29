@@ -4,7 +4,7 @@
 
 # summary
 this documentation explains how to run and test this project contents.
-Download data from https://www.dropbox.com/s/o1wqgv713n2k1kn/sorted_data.csv.gz?dl=0
+
 This project is based on the challenge below.
 http://www.debs2015.org/call-grand-challenge.html
 
@@ -186,6 +186,7 @@ when CQClient runs, it will be notify update event of TripStat, and it will cont
 
     ```
     xd:> stream create --definition  "http | trip-converter | gemfire-server --host=localhost --port=41111 --useLocator=true --regionName=Trip --keyExpression=payload " --name trip --deploy
+
     ```
 
 
@@ -210,10 +211,13 @@ when CQClient runs, it will be notify update event of TripStat, and it will cont
 ## run data ingestion.
 
 1. go to the data folder.
-
+    ```
+    $> cd springxd-finalproject-question1/data
+    ```
 1. run data ingestion script into spring xd stream which is created just above.
 
     ```
+
     $> cd springxd-finalproject-question1/data
     $> python ingest.py
 
@@ -224,10 +228,19 @@ when CQClient runs, it will be notify update event of TripStat, and it will cont
 
 
     ```
+   for real data ingestion, Download data from https://www.dropbox.com/s/o1wqgv713n2k1kn/sorted_data.csv.gz?dl=0
+
+   ```
+   $> cd springxd-finalproject-question1/data
+
+   $> python ingest.py -i [downloaded_file]
+   ```
 
 1. go to Continous Query and see the response as following.
 
     ```
+    $> source setenv.sh
+    $> java client.CQClient
     Made new CQ Service
     Press enter to end
     pickup:2013-01-01 00:00:00, dropoff:2013-01-01 00:02:00, cell ranking:[25714.5652, 25714.5652] [NULL] [NULL] [NULL] [NULL] [NULL] [NULL] [NULL] [NULL] [NULL]

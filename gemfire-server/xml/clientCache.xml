@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE client-cache PUBLIC
+    "-//GemStone Systems, Inc.//GemFire Declarative Caching 7.0//EN"
+    "http://www.gemstone.com/dtd/cache7_0.dtd">
+
+<client-cache>
+<pool name="client"  subscription-enabled="true">
+		<locator host="localhost" port="41111" />
+	</pool>
+
+	<region name="Trip">
+		<region-attributes refid="PROXY">
+		</region-attributes>
+	</region>
+    <region name="TripStat">
+        <region-attributes refid="PROXY">
+        </region-attributes>
+    </region>
+</client-cache>
